@@ -1,4 +1,16 @@
 /* globals.css */
-div {
-  font-size: 12px;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto:wght@400;700&display=swap");
+
+* {
+  background-color: red;
+}
+
+button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
 }

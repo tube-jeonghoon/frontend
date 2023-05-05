@@ -7,11 +7,11 @@ import 'webpack-dev-server';
 
 const config = {
   mode: 'development',
-  entry: './src/index.tsx',
+  entry: './src/index.jsx',
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),
         use: ['babel-loader'],
       },

@@ -1,0 +1,88 @@
+/* Login.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Nunito&family=Roboto:wght@400;700&display=swap');
+
+.container {
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #142D47;
+  height: 100vh;
+
+}
+
+.innerBox {
+  width: 350px;
+  height: 550px;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px #D2D2D2 solid;
+  box-shadow: 0 0 20px rgba(0,0,0, 0.1);
+  border-radius: 5px;
+}
+
+.titleBox {
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 20px;
+}
+
+.mailInput {
+  margin-bottom: 1rem;
+}
+
+.passwordBox {
+  margin-bottom: 1rem;
+}
+
+.loginBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px #005774 solid;
+  border-radius: 5px;
+  height: 36px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #142D47;
+  color: #fff;
+}
+
+.loginBtn {
+  width: 100%;
+}
+
+.loginLine {
+  display: flex;
+  margin-top: 42px ;
+  font-size: 16px;
+}
+
+.loginHrL {
+  height: 1.5px;
+  width: 85px;
+  background-color: rgb(147, 147, 147);
+  margin-top: 12px;
+  margin-right: 32px;
+}
+
+.loginHrR {
+  height: 1.5px;
+  width: 85px;
+  background-color: rgb(147, 147, 147);
+  margin-top: 12px;
+}
+
+.signUpBox {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 42px ;
+}
+
+.signUpBtn {
+  color: #2d7188;
+  font-weight: 600;
+}
