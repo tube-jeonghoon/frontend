@@ -1,10 +1,6 @@
 /* globals.css */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto:wght@400;700&display=swap");
 
-* {
-  background-color: red;
-}
-
 button {
   background: none;
   border: none;
