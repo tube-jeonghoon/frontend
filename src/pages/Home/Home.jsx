@@ -8,13 +8,13 @@ const Home = () => {
   return (
     <div>
       {/* ---------- HEADER ---------- */}
-      <Header />
+      {/* <Header /> */}
 
       {/* ---------- CONTENT ---------- */}
       <Content />
 
       {/* ---------- FOOTER ---------- */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
