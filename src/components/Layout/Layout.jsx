@@ -1,7 +1,7 @@
-import React from "react";
-import Nav from "../Nav/Nav"
-import Header from "../Header/Header"
-import Footer from "../Footer/Footer";
+import React from 'react';
+import Nav from './Nav/Nav';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 const Layout = ({ children }) => {
   return (
@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       {children}
       <Footer />
     </div>
-    );
+  );
 };
 
 export default Layout;
