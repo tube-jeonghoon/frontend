@@ -1,5 +1,7 @@
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
+    width: 200px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #B4B4B4;
 }
