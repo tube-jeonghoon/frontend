@@ -1,5 +1,10 @@
 /* globals.css */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto:wght@400;700&display=swap");
+/* ibm flex sans kr 사용하기 */
+
+body{
+  background-color: #142D47;
+}
 
 button {
   background: none;

@@ -9,19 +9,16 @@ import Signup from '../pages/Signup/Signup';
 
 const Router = () => {
   return (
-    <BrowserRouter>
+      <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/contens" element={<Contents />} />
-        <Route path="/details" element={<Details />} />
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/" element={<Layout><Contents /></Layout>} />
+        <Route path="/details" element={<Layout><Details /></Layout>} />
       </Routes>
-
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
   );
 };
 
