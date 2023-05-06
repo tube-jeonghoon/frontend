@@ -3,16 +3,25 @@ import Nav from './Nav/Nav';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import styles from './Layout.module.css';
+import LoginBar from '../Loginbar/LoginBar';
 
 const Layout = ({ children }) => {
   return (
     <>
       <div className={`${styles.container}`}>
-        <div className={`${styles.inner}`}>
-          <Header />
-          <Nav />
+        <Header />
+        <Footer />
+        <div className={`${styles.inner} relative`}>
+          <LoginBar />
           {children}
-          <Footer />
+          <Nav />
+          <div className={`${styles.lt} absolute text-white font-bold`}>
+            구석구석
+          </div>
+          <div className={`${styles.rb} absolute text-white font-bold`}>
+            모아모아
+          </div>
+          <div className={`${styles.rt} absolute font-bold`}>#F24822</div>
         </div>
       </div>
     </>

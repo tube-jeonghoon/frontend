@@ -5,9 +5,24 @@
   grid-template-columns: repeat(auto-fill, minmax(1%, auto));
   grid-template-rows: repeat(auto-fill, minmax(1%, auto));
 }
-
 .inner {
-  grid-column: 9 / 92; /* 9~92번 컬럼에 해당하는 그리드 셀 */
+  grid-column: 17 / 84; /* 9~92번 컬럼에 해당하는 그리드 셀 */
   grid-row: 20 / 88; /* 20~88번 로우에 해당하는 그리드 셀 */
   background-color: #e5e5e5;
+}
+.lt{
+  left: -100px;
+  top: -40px;
+  font-size: 30px;
+}
+.rb{
+  right: -100px;
+  bottom: -40px;
+  font-size: 30px;
+}
+.rt{
+  right: -100px;
+  top: -40px;
+  font-size: 30px;
+  color: #F24822;
 }

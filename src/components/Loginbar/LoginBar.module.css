@@ -1,0 +1,37 @@
+.container {
+    width: 100px;
+    background-color: #e5e5e5;
+    margin: 0;
+    top: 0;
+    left: -100px;
+    position: relative;
+}
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -30px;
+    top: 150px;
+    font-size: 15px;
+}
+.circle1 {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #142D47;
+    position: absolute;
+    top: 50px;
+    left: 39px;
+}
+.circle2 {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #142D47;
+    position: absolute;
+    bottom: -10px;
+    left: 39px;
+}
