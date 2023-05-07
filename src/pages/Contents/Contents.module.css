@@ -1,3 +1,67 @@
 .container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  outline: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 
+.container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 135px;
+  column-gap: 40px;
+  margin: 130px 40px 140px 20px;
+}
+
+.cardWrap {
+    overflow: hidden;
+    border: 1px solid rgb(202, 200, 200);
+    border-radius: 10px;
+}
+
+.photo{
+    width: 100%;
+    height: 220px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.contentsWrap{
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+    height: auto;
+    font-weight: 800;
+    font-size: 22px;
+    margin: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    word-wrap: break-word; 
+    -webkit-line-clamp: 1; 
+    -webkit-box-orient: vertical; 
+    text-overflow: ellipsis;
+}
+
+.contents{
+    height: auto;
+    margin: 0 20px 30px 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word; 
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical; 
 }

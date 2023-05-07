@@ -6,6 +6,7 @@ import Contents from '../pages/Contents/Contents';
 import Details from '../pages/Details/Details';
 import Login from '../pages/Login/Login';
 import Signup from '../pages/Signup/Signup';
+import Posts from '../pages/Posts/Posts';
 
 const Router = () => {
   return (
@@ -24,6 +25,14 @@ const Router = () => {
           element={
             <Layout>
               <Details />
+            </Layout>
+          }
+        />
+        <Route
+          path="/posts"
+          element={
+            <Layout>
+              <Posts />
             </Layout>
           }
         />
