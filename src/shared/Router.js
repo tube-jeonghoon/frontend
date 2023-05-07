@@ -10,7 +10,7 @@ import Posts from '../pages/Posts/Posts';
 
 const Router = () => {
   return (
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
         <Route
           path="/"
@@ -30,10 +30,10 @@ const Router = () => {
         />
       </Routes>
       <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </BrowserRouter>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
