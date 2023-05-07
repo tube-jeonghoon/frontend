@@ -6,19 +6,34 @@ import Contents from '../pages/Contents/Contents';
 import Details from '../pages/Details/Details';
 import Login from '../pages/Login/Login';
 import Signup from '../pages/Signup/Signup';
+import Posts from '../pages/Posts/Posts';
 
 const Router = () => {
   return (
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout><Contents /></Layout>} />
-        <Route path="/details" element={<Layout><Details /></Layout>} />
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Contents />
+            </Layout>
+          }
+        />
+        <Route
+          path="/details"
+          element={
+            <Layout>
+              <Details />
+            </Layout>
+          }
+        />
       </Routes>
       <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </BrowserRouter>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
