@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Nunito&family=Roboto:wght@400;700&display=swap');
+
+.container {
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: .3fr .7fr;
+  overflow: hidden;
+}
+
+.contentsL {
+  width: 100%;
+  margin-top: 10rem;
+}
+
+.contentsTitleBox {
+  display: grid;
+  grid-template-columns: 10px .3fr .7fr;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.contentsLocal {
+  margin-top: 3rem;
+  width: 14rem;
+  font-size: 14px;
+  border: 2px rgb(177, 177, 177) dotted;
+  padding: .5rem;
+}
+
+
+.contentsBody {
+  line-height: 1.5rem;
+  margin-top: 2.5rem;
+  font-size: 14px;
+  width: 14rem;
+  /* 스크롤바 */
+  height: 200px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.contentsBody::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.contentsY {
+  text-align: right;
+}
+
+.contentsTitle {
+  margin-left: 3px;
+}
+
+.contentsHeart {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.contentsR {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+.contentsImg {
+  width: 1200px;
+  height: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.contentsImgImg {
+  object-fit: cover;
+}
