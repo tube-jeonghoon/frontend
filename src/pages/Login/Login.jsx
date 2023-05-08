@@ -19,6 +19,10 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    if (emailInput.trim() === '' || passwordInput.trim() === '') {
+      alert('이메일 또는 비밀번호를 입력해주세요.');
+      return;
+    }
     console.log('✨ ‣ Login ‣ emailInput:', emailInput);
     console.log('✨ ‣ Login ‣ passwordInput:', passwordInput);
 
