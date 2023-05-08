@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styles from './Login.module.css';
+import axios from 'axios';
 
 const Login = () => {
+  const BASE_URL = 'http://localhost:4000';
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
 
@@ -15,8 +17,24 @@ const Login = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(emailInput, passwordInput);
-    // 서버로 전송하는 코드
+    console.log('✨ ‣ Login ‣ emailInput:', emailInput);
+    console.log('✨ ‣ Login ‣ passwordInput:', passwordInput);
+  };
+
+  const loginHandler = async () => {
+    const response = await axios.post(
+      `${BASE_URL}/api/login`,
+      {
+        id: emailInput,
+        password: passwordInput,
+      },
+      { withCredentials: true },
+    );
+    console.log('✨ ‣ loginHandler ‣ response:', response);
+
+    if (response.status === 200) {
+      console.log('인증완료');
+    }
   };
 
   return (
@@ -51,7 +69,11 @@ const Login = () => {
 
           {/* ---------- Login ---------- */}
           <div className={`${styles.loginBox} `}>
-            <button className={`${styles.loginBtn}`} type="submit">
+            <button
+              className={`${styles.loginBtn}`}
+              type="submit"
+              onClick={loginHandler}
+            >
               로그인
             </button>
           </div>

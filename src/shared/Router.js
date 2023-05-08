@@ -28,6 +28,14 @@ const Router = () => {
             </Layout>
           }
         />
+        <Route
+          path="/posts"
+          element={
+            <Layout>
+              <Posts />
+            </Layout>
+          }
+        />
       </Routes>
       <Routes>
         <Route path="/login" element={<Login />} />
