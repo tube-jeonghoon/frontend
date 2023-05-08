@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import styles from './Login.module.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const BASE_URL = 'http://localhost:4000';
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+  const navigate = useNavigate();
 
   const emailInputHandler = (e) => {
     setEmailInput(e.target.value);
@@ -15,25 +17,32 @@ const Login = () => {
     setPasswordInput(e.target.value);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
+    if (emailInput.trim() === '' || passwordInput.trim() === '') {
+      alert('이메일 또는 비밀번호를 입력해주세요.');
+      return;
+    }
     console.log('✨ ‣ Login ‣ emailInput:', emailInput);
     console.log('✨ ‣ Login ‣ passwordInput:', passwordInput);
-  };
 
-  const loginHandler = async () => {
-    const response = await axios.post(
-      `${BASE_URL}/api/login`,
-      {
-        id: emailInput,
-        password: passwordInput,
-      },
-      { withCredentials: true },
-    );
-    console.log('✨ ‣ loginHandler ‣ response:', response);
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/api/login`,
+        {
+          id: emailInput,
+          password: passwordInput,
+        },
+        { withCredentials: true },
+      );
+      console.log('✨ ‣ loginHandler ‣ response:', response);
 
-    if (response.status === 200) {
-      console.log('인증완료');
+      if (response.status === 200) {
+        console.log('인증완료');
+        navigate('/');
+      }
+    } catch (error) {
+      console.log('✨ ‣ submitHandler ‣ error:', error);
     }
   };
 
@@ -69,11 +78,7 @@ const Login = () => {
 
           {/* ---------- Login ---------- */}
           <div className={`${styles.loginBox} `}>
-            <button
-              className={`${styles.loginBtn}`}
-              type="submit"
-              onClick={loginHandler}
-            >
+            <button className={`${styles.loginBtn}`} type="submit">
               로그인
             </button>
           </div>
