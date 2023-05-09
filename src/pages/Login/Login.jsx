@@ -1,49 +1,63 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Login.module.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import jwtDecode from 'jwt-decode';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken } from '../../redux/modules/authSlice';
 
 const Login = () => {
-  const BASE_URL = 'http://localhost:4000';
+  // ---------- Input useState ---------- //
+  const [user, setUser] = useState({ email: '', password: '' });
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+
+  // ---------- useNavigate ---------- //
   const navigate = useNavigate();
 
+  // ---------- useDispatch ---------- //
+  const dispatch = useDispatch();
+
+  //  ---------- Post 요청  ---------- //
+  const loginUser = async (user) => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/api/login`,
+        user,
+      );
+      const { tokenmake: token } = response.data;
+      const userToken = jwtDecode(token);
+      const expirationTime = new Date(userToken.exp * 1000);
+      Cookies.set('token', token, { expires: expirationTime });
+      dispatch(setToken(token));
+      // navigate('/');
+    } catch (err) {
+      alert(`이메일 및 비밀번호를 잘못 입력하셨습니다.`);
+      console.log(err);
+    }
+  };
+
+  // ---------- Input Handler ---------- //
   const emailInputHandler = (e) => {
     setEmailInput(e.target.value);
+    setUser({ ...user, email: e.target.value });
   };
 
   const passwordInputHandler = (e) => {
     setPasswordInput(e.target.value);
+    setUser({ ...user, password: e.target.value });
   };
 
+  // ---------- Submit Handler ----------
   const submitHandler = async (e) => {
+    console.log(user);
     e.preventDefault();
     if (emailInput.trim() === '' || passwordInput.trim() === '') {
       alert('이메일 또는 비밀번호를 입력해주세요.');
       return;
     }
-    console.log('✨ ‣ Login ‣ emailInput:', emailInput);
-    console.log('✨ ‣ Login ‣ passwordInput:', passwordInput);
-
-    try {
-      const response = await axios.post(
-        `${BASE_URL}/api/login`,
-        {
-          id: emailInput,
-          password: passwordInput,
-        },
-        { withCredentials: true },
-      );
-      console.log('✨ ‣ loginHandler ‣ response:', response);
-
-      if (response.status === 200) {
-        console.log('인증완료');
-        navigate('/');
-      }
-    } catch (error) {
-      console.log('✨ ‣ submitHandler ‣ error:', error);
-    }
+    loginUser(user);
   };
 
   return (
