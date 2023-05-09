@@ -11,30 +11,50 @@
 
 .contentsL {
   width: 100%;
-  margin-top: 10rem;
+  padding: 20px 60px 20px 10px;
+}
+
+.btnWrap{
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.btnWrap > button{
+  font-size: 1.5rem;
+  margin-left: 15px;
+  color: #142D47
+}
+
+.contentBox{
+  margin-top: 5rem;
 }
 
 .contentsTitleBox {
   display: grid;
-  grid-template-columns: 10px .3fr .7fr;
+  grid-template-columns: 20px 9fr .1fr;
   font-size: 22px;
   font-weight: 600;
 }
 
 .contentsLocal {
   margin-top: 3rem;
-  width: 14rem;
+  /* width: 14rem; */
+  width: 100%;
   font-size: 14px;
   border: 2px rgb(177, 177, 177) dotted;
   padding: .5rem;
 }
 
+.contentsLocal > p{
+  text-align: justify;
+}
 
 .contentsBody {
   line-height: 1.5rem;
   margin-top: 2.5rem;
   font-size: 14px;
-  width: 14rem;
+  width: 100%;
+  text-align: justify;
   /* 스크롤바 */
   height: 200px;
   box-sizing: border-box;
@@ -48,25 +68,25 @@
 }
 
 .contentsY {
-  text-align: right;
-}
-
-.contentsTitle {
-  margin-left: 3px;
+  width: 4px;
+  height: 33px;
+  background-color: #292626;
+  /* text-align: right; */
+  margin-right: 15px;
 }
 
 .contentsHeart {
-  font-size: 16px;
-  text-align: center;
-  margin-top: 0.5rem;
+  font-size: 1.7rem;
+  float: right;
+  color: #F24822;
 }
 
 .contentsR {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  position: relative;
 }
-
 
 .contentsImg {
   width: 1200px;
@@ -77,4 +97,90 @@
 
 .contentsImgImg {
   object-fit: cover;
+}
+
+.cmtContainer{
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+  left: 0;
+  top: 0;
+  padding: 30px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cmtWrap{
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.cmtWrap::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.cmtZone{
+  width: 100%;
+  height: auto;
+  border: 1px solid gray;
+  border-radius: 7px;
+  margin: 20px 0;
+}
+
+.cmtInfo{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  color: #000;
+  background-color: #E5E5E5;
+  padding: 10px 10px 5px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.cmtWriteInfo{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  color: #fff;
+}
+
+.cmtDate{
+  margin-left: 0.5rem;
+}
+
+.cmtDelBtn{
+  margin-left: 0.5rem;
+}
+
+.cmtBtnWrap > button{
+  font-size: 1.5rem;
+
+}
+
+.comment{
+  color: #000;
+  padding: 0 10px 15px;
+}
+
+.cmtWriteWrap{
+  background-color: #142D47;
+  margin: 20px 0;
+  padding: 10px 10px 15px;
+  border-radius: 7px;
+}
+
+.cmtSaveBtn{
+  font-size: 1.5rem;
+  color: #fff
 }
