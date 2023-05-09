@@ -11,12 +11,12 @@
 
 .contentsL {
   width: 100%;
-  margin-top: 10rem;
+  margin-top: 7rem;
 }
 
 .contentsTitleBox {
   display: grid;
-  grid-template-columns: 10px .3fr .7fr;
+  grid-template-columns: 10px .4fr .1fr .8fr;
   font-size: 22px;
   font-weight: 600;
 }
@@ -61,6 +61,13 @@
   margin-top: 0.5rem;
 }
 
+.contentsComments {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+
 .contentsR {
   width: 100%;
   margin: 0 auto;
@@ -77,4 +84,11 @@
 
 .contentsImgImg {
   object-fit: cover;
+}
+
+.deleteBox {
+  margin-top: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+  color: red;
 }
