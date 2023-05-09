@@ -9,10 +9,14 @@ const Details = () => {
     <div className={`${styles.container}`}>
       {/* ---------- contentsL ---------- */}
       <div className={`${styles.contentsL}`}>
+        <div className={`${styles.deleteBox}`}>
+          <button className={`${styles.deleteBtn}`}>&times;</button>
+        </div>
         {/* ---------- contentsTitleBox ---------- */}
         <div className={`${styles.contentsTitleBox}`}>
           <div className={`${styles.contentsY}`}>|</div>
           <div className={`${styles.contentsTitle}`}>오사카 성</div>
+          <div className={`${styles.contentsComments}`}>‣</div>
           <div className={`${styles.contentsHeart}`}>❤️</div>
         </div>
         {/* ---------- contentsLocal ---------- */}
