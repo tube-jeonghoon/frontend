@@ -86,7 +86,11 @@
   text-align: center;
   margin-top: 0.5rem;
 }
-
+.contentsComments {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0.5rem;
+}
 
 .contentsR {
   width: 100%;
