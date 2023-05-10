@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
   const navigate = useNavigate();
+  // `!!`는 불리언값으로 반환하기 위한 용도로 사용
+  // isLoggedIn의 값이 0, undefined, null, '', NaN, 'false' 가 들어왔을경우 false로 반환하기 위한 용도
   const [isLoggedIn, setIsLoggedIn] = useState(!!Cookies.get('token'));
 
   // 로그아웃 버튼 클릭 시 실행되는 함수
