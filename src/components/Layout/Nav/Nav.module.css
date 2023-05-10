@@ -28,6 +28,18 @@ li{
     bottom: -16px;
     left: 0;
 }
+
+.logout{
+    width: 30px;
+    height: 30px;
+    background-image: url(../../../../public/logo_login.png);
+    background-size: cover;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+}
+
 .text{
     display: none;
 }

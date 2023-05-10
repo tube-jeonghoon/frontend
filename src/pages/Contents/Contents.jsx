@@ -20,7 +20,7 @@ const Contents = () => {
         <div className={`${styles.container}`}>
           <div className={`${styles.wrap}`}>
             {data.data.map((post) => {
-              console.log(post)
+              // console.log(post);
               return (
                 <Link to={`/details/${post.postId}`} key={post.postId}>
                   <div className={`${styles.cardWrap}`}>
@@ -38,12 +38,10 @@ const Contents = () => {
                       <div className={`${styles.title} text-2xl font-bold`}>
                         {post.title}
                       </div>
-                      <div className={`${styles.contents}`}>
-                        {post.subject}
-                      </div>
+                      <div className={`${styles.contents}`}>{post.subject}</div>
                     </div>
                   </div>
-            </Link>
+                </Link>
               );
             })}
           </div>
