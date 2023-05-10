@@ -21,7 +21,7 @@ const Router = () => {
           }
         />
         <Route
-          path="/details"
+          path="details/:postId"
           element={
             <Layout>
               <Details />
