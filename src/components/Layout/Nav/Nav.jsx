@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Nav.module.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { MdLogin, MdLogout } from 'react-icons/md';
 import Cookies from 'js-cookie';
-import { Link } from 'react-router-dom';
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ const Nav = () => {
   const handleLogin = () => {
     navigate('/login');
   };
+
   return (
     <nav className={`${styles.container} absolute text-white h-full`}>
       {/* ----- MenuContainer ----- */}
@@ -30,19 +31,21 @@ const Nav = () => {
         <li>RANKING</li>
         {isLoggedIn ? (
           <li onClick={handleLogout}>
-            <div className={`${styles.logout}`}>
+            <Link to={'/'} className={`${styles.login}`}>
+              <MdLogout />
               <span className={`${styles.text}`}>LOGOUT</span>
-            </div>
+            </Link>
           </li>
         ) : (
           <li onClick={handleLogin}>
-            <div className={`${styles.login}`}>
+            <Link to={'/login'} className={`${styles.login}`}>
+              <MdLogin />
               <span className={`${styles.text}`}>LOGIN</span>
-            </div>
+            </Link>
           </li>
         )}
         <li className={`${styles.write}`}>
-          <Link to={'/posts'}>WRITE</Link>
+          <Link to={'/posts'}>POST</Link>
         </li>
       </ul>
     </nav>
