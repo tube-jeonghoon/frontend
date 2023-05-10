@@ -3,15 +3,21 @@ import styles from './Contents.module.css';
 import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { getPosts } from '../../api/posts';
+import LoadingStatus from '../../components/StatusComponents/LoadingStatus';
+import ErrorStatus from '../../components/StatusComponents/ErrorStatus';
 
 const Contents = () => {
   const { isLoading, isError, data } = useQuery('posts', getPosts);
 
   if (isLoading) {
-    return <div>로딩중입니다...</div>;
+    return (
+      <LoadingStatus />
+    );
   }
   if (isError) {
-    return <div>오류가 발생하였습니다.</div>;
+    return (
+      <ErrorStatus />
+    );
   }
 
   return (
@@ -20,7 +26,6 @@ const Contents = () => {
         <div className={`${styles.container}`}>
           <div className={`${styles.wrap}`}>
             {data.data.map((post) => {
-              // console.log(post);
               return (
                 <Link to={`/details/${post.postId}`} key={post.postId}>
                   <div className={`${styles.cardWrap}`}>

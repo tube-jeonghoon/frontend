@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Posts.module.css';
 import { useMutation, useQueryClient } from 'react-query';
-import { addPosts } from '../../api/posts';
+import { addPost } from '../../api/posts';
 import { useNavigate } from 'react-router-dom';
 
 const Posts = () => {
@@ -16,7 +16,7 @@ const Posts = () => {
   const queryClient = useQueryClient()
   const navigate = useNavigate();
 
-  const mutation = useMutation(addPosts, {
+  const mutation = useMutation(addPost, {
     onSuccess:() => {
       queryClient.invalidateQueries("posts")
       navigate('/')
