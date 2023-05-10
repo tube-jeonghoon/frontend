@@ -22,7 +22,7 @@ const Details = () => {
   if (isLoading) {
     return <div>로딩중입니다..</div>;
   }
-
+  
   if (isError) {
     return <div>오류가 발생하였습니다!</div>;
   }
