@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Login.module.css';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import jwtDecode from 'jwt-decode';
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,12 +31,21 @@ const Login = () => {
       const expirationTime = new Date(userToken.exp * 1000);
       Cookies.set('token', token, { expires: expirationTime });
       dispatch(setToken(token));
-      // navigate('/');
+      navigate('/');
     } catch (err) {
       alert(`이메일 및 비밀번호를 잘못 입력하셨습니다.`);
       console.log(err);
     }
   };
+
+  // 만약 토큰을 들고 있다면 메인페이지로 라우팅
+  useEffect(() => {
+    const token = Cookies.get('token');
+    if (token) {
+      console.log(token);
+      navigate('/');
+    }
+  }, [navigate]);
 
   // ---------- Input Handler ---------- //
   const emailInputHandler = (e) => {
@@ -108,7 +117,9 @@ const Login = () => {
         {/* ---------- signUp ---------- */}
         <div className={`${styles.signUpBox}`}>
           <div>계정이 없으신가요?</div>
-          <button className={`${styles.signUpBtn}`}>가입하기</button>
+          <button className={`${styles.signUpBtn}`}>
+            <Link to="../signup">가입하기</Link>
+          </button>
         </div>
       </div>
     </div>
