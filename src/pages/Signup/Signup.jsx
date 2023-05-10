@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './Signup.module.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Signup = () => {
@@ -27,7 +27,7 @@ const Signup = () => {
       );
       navigate('/Login');
     } catch (err) {
-      console.log(`${err}`);
+      console.log(err);
       alert(
         `회원가입이 실패하였습니다. 아이디가 중복됬거나 닉네임이 중복되었습니다.`,
       );
@@ -73,6 +73,11 @@ const Signup = () => {
 
     signupUser(user);
   };
+
+  const loginBtn = () => {
+    navigate('/login');
+  };
+
   return (
     <div className={`${styles.container}`}>
       <div className={`${styles.innerBox}`}>
@@ -140,7 +145,9 @@ const Signup = () => {
         {/* ---------- loginBox ---------- */}
         <div className={`${styles.loginBox}`}>
           <div>계정이 있으신가요?</div>
-          <button className={`${styles.loginBtn}`}>로그인하기</button>
+          <button className={`${styles.loginBtn}`} onclick={loginBtn}>
+            <Link to="../Login">로그인하기</Link>
+          </button>
         </div>
       </div>
     </div>
