@@ -14,6 +14,7 @@ const Nav = () => {
   const handleLogout = () => {
     Cookies.remove('token');
     setIsLoggedIn(false);
+    navigate('/login');
   };
 
   // login 페이지로 이동
@@ -31,7 +32,7 @@ const Nav = () => {
         <li>RANKING</li>
         {isLoggedIn ? (
           <li onClick={handleLogout}>
-            <Link to={'/'} className={`${styles.login}`}>
+            <Link to={'/login'} className={`${styles.login}`}>
               <MdLogout />
               <span className={`${styles.text}`}>LOGOUT</span>
             </Link>
