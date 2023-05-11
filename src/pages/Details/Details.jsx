@@ -12,7 +12,6 @@ import { BiCommentDetail } from 'react-icons/bi';
 import { VscSaveAs } from 'react-icons/vsc';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { delPost, getPostDetail } from '../../api/posts';
-import { PacmanLoader } from 'react-spinners';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import Comment from '../../components/Comments/Comments';
 import LoadingStatus from '../../components/StatusComponents/LoadingStatus';
@@ -57,7 +56,7 @@ const Details = () => {
   if (isLoading) {
     return <LoadingStatus />;
   }
-  
+
   if (isError) {
     return <ErrorStatus />;
   }
