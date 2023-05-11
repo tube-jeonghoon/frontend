@@ -29,7 +29,7 @@ const Nav = () => {
         <li>RANKING</li>
         {isLoggedIn ? (
           <li onClick={handleLogout}>
-            <Link to={'/'} className={`${styles.login}`}>
+            <Link to={'/login'} className={`${styles.login}`}>
               <MdLogout />
               <span className={`${styles.text}`}>LOGOUT</span>
             </Link>

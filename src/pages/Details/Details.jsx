@@ -119,7 +119,7 @@ const Details = () => {
                 /> */}
               </div>
               {/* -----------comment------------- */}
-              <Comment />
+              <Comment postId={postId} />
             </div>
           </div>
         ) // ---------- container ----------
